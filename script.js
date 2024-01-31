@@ -135,9 +135,14 @@ function matchCards() {
 
   if (flipCounter === COLORS.length) {
     let bestScore = +localStorage.getItem("best-score")
-    if (playerScore < bestScore) {
+
+    if (bestScore === 0) {
       localStorage.setItem("best-score", playerScore);
     }
+    else if (playerScore < bestScore) {
+      localStorage.setItem("best-score", playerScore);
+    }
+
     alert("GAME OVER!");
   }
 }
